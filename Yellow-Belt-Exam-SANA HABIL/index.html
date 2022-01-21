@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Dojo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top">
+        <div class="nav">
+            <h1 class="nav-title">Gaming<span id="top-span">Dojo</span></h1>
+            <div id="nav-right">
+                <select>
+                    <option value="Euro €">Euro €</option>
+                </select>
+                <div id="shopping-cart">
+                    <img class="nav-imgs" src="images/cart-light.png" alt="shoppingcart">
+                    <span id="shopping-items">0</span>
+                </div>
+                <img class="nav-imgs" src="images/search-light.png">
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <h3 id="top-h3">Highlights</h3>
+        <div id="slideshow">
+            <img onclick="changeImgBack()" id="left-chevron" src="images/chevron-left.png">
+            <img id="current-img" src="images/stonepunk.png">
+            <img onclick="imgChange()" id="right-chevron" src="./images/chevron-left.png">
+        </div>
+        <div id="line-under-slideshow">
+            <button class="gray-button-line"></button>
+            <button class="purple-button-line"></button>
+            <button class="gray-button-line"></button>
+            <button class="gray-button-line"></button>
+        </div>
+        <div id="photos-section">
+            <div class="box">
+                <img class="main-imgs" src="./images/cafe-neko.png" alt="cafe-neko">
+                <p class="img-title">Cafe Neko: Golden Edition</p>
+                <div class="icons-group">
+                    <img class="icons" src="./images/windows.png" alt="windows-icon">
+                    <img class="icons" src="./images/apple.png" alt="apple-icon">
+                </div>
+                <div class="buttom-line">
+                    <button class="purple">-20%</button>
+                    <div>
+                        <p class="discount">€14.98</p>
+                        <p class="buttom-p">€10.49</p>
+                    </div>
+                    <button onclick="addToCart()" class="buy-button">Buy</button>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img class="main-imgs" src="./images/pixel-ninjas-2.png" alt="pixel-ninjas-2">
+                <p class="img-title">Pixel Ninjas 2</p>
+                <div class="icons-group">
+                    <img class="icons" src="./images/windows.png" alt="windows-icon">
+                    <img class="icons" src="./images/apple.png" alt="apple-icon">
+                </div>
+                <div class="buttom-line">
+                    <button class="purple">-10%</button>
+                    <div>
+                        <p class="discount">€8.19</p>
+                        <p class="buttom-p">€7.39</p>
+                    </div>
+                    <button onclick="addToCart()"class="buy-button">Buy</button>
+                </div>
+            </div>
+            <div class="box">
+                <img class="main-imgs" src="./images/stonepunk.png" alt="stonepunk">
+                <p class="img-title">Stonepunk 1000 BCE</p>
+                <div class="icons-group">
+                    <img class="icons" src="./images/windows.png" alt="windows-icon">
+                    <img class="icons" src="./images/apple.png" alt="apple-icon">
+                    <img class="icons" onclick="msg()" src="./images/linux.png" alt="linux-icon">
+                </div>
+                <div class="buttom-line">
+                    <button class="purple">New</button>
+                        <p class="buttom-p">€19.99</p>
+                    <button onclick="addToCart()" class="buy-button">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

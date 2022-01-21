@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <body>
+        <div class="nav">
+            <h1 class=h1-group> Dojonary</h1>
+            <button id="search-btn">search</button> 
+            <button id="login-btn" onclick="logout(this)">Login</button> 
+        </div>
+</body>
+    <div id="container">
+        <div id="left-colomn">
+            <div class=box>
+                <div class="left-side">
+                    <p class="big-p">ninja</p>
+                    <p class="italic-p">noun</p>
+                    <p>ploural:<span class="italic-p">ninjas</span></p>
+                    <button id="like-box1" onclick="messageuser()">13 Like</button> 
+                </div>
+                <p class="p-in-box">A practionar skilled in the <br><a href="#"> Japanees</a> art of <a href="#">ninjatsu</a></p>
+            </div>
+            <div class=box>
+                <div class="left-side">
+                    <p class="big-p">ninja</p>
+                    <p class="italic-p">noun</p>
+                    <p>ploural:<span class="italic-p">ninjas</span></p>
+                    <button id="like-box2" onclick="messageuser()">37 Like</button> 
+                </div>    
+                <p class="p-in-box">A <a href="#">programmer</a> who breaks<br> down problems with <a href="#">zen</a>-like focus</p>
+            </div>
+        </div>
+        <div id="right-colomn">
+                <h2 id="h2-right-colom">Dojonary <br>is defined by <span id="bold-span">you</span></h2>
+                <button id="add-definition-btn"  onclick="hide(this)">Add Definition</button>        
+        </div>
+    </div>
+</html>

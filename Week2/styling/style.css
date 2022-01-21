@@ -1,0 +1,24 @@
+h1 {
+    color: cyan;
+    background: black;
+    text-align: left;
+    font-family: monospace;
+    font-weight: bold;
+}
+h3 {
+    color: white;
+    background: blueviolet;
+    text-align: center;
+    font-style: italic;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    ;
+}
+h4{
+    color: black;
+    background: lightblue;
+    text-align: right;
+    text-decoration: underline;
+    font-weight: lighter;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="top-section">
+            <h1 id="left-top">DojoWeather</h1>
+            <ul id="top-list">
+                <li onclick="alert('Loading Weather Report...')"> Burbank</li>
+                <li onclick="alert('Loading Weather Report...')"> Chicago</li>
+                <li onclick="alert('Loading Weather Report...')"> Dallas</li>
+            </ul>
+        </div>
+        <div id="city-temp-bar">
+            <h2 id="left-city-temp-bar">San Jose</h1>
+            <div id="temp-switch">
+                <p>Show temprature in</p>
+                <select name="temp-type"  onchange="convert(this)" >
+                    <option value="C"> °C </option>
+                    <option value="F"> °F </option>
+                </select> 
+            </div>   
+        </div>
+        <div id="main-boxes">
+            <div class="box">
+                    <p class="p-in-box" >Today</p>
+                    <img class="weather-imgs" src="./assets/some_rain.png" alt="rain">
+                    <p class="weather-condition">some rain</p>
+                    <ul class="num-list">
+                        <li class="red" id="num1">24°</li>
+                        <li class="blue" id="num2">18°</li>
+                    </ul>
+            </div>
+            <div class="box">
+                <p class="p-in-box" >Tomorrow</p>
+                <img class="weather-imgs" src="./assets/some_sun.png" alt="rain">
+                <p class="weather-condition">some sun</p>
+                <ul class="num-list">
+                    <li class="red" id="num3">27°</li>
+                    <li class="blue" id="num4">19°</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p class="p-in-box" >Friday</p>
+                <img class="weather-imgs" src="./assets/some_clouds.png" alt="rain">
+                <p class="weather-condition">some clouds</p>
+                <ul class="num-list">
+                    <li class="red" id="num5">21°</li>
+                    <li class="blue" id="num6">16°</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p class="p-in-box">Saturday</p>
+                <img class="weather-imgs" src="./assets/some_sun.png" alt="rain">
+                <p class="weather-condition" >some sun</p>
+                <ul class="num-list">
+                    <li class="red" id="num7">26°</li>
+                    <li class="blue" id="num8">21°</li>
+                </ul>
+            </div>
+        </div> 
+        <div id="alert-cookie">
+            <h2 id="alert-subject">Stop! Cookie time</h2>
+            <div id="alert-body">
+                <img id="cookie-img"src="./assets/cookie.png">
+                <p id="p-in-alert"> We use cookies(sadly not the edible ones) to personalize<br>content and ads, to provide social media features, and to<br> analyse our traffic.<span><a href="#">Read More...</a></span></p>
+                <button onclick="hide()" id="accept-btn" type="submit">I Accept</button>
+            </div>
+        </div>   
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>
