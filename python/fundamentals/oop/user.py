@@ -13,6 +13,21 @@ class User:		# here's what we have so far
     #display_user_balance(self) - have this method print the user's name and account balance to the terminal
     def display_user_balance(self):
         print("User:",self.name,",Balance:",self.account_balance)
+        #BONUS: Add a transfer_money method; have the first user transfer money to the third user and then print both users' balances
+    def transfer_money(sana, sam, amount):
+        sana.account_balance = sana.account_balance - amount
+        sam.account_balance += amount
+        print(sana.account_balance)
+        print(sam.account_balance)
+
+    
+    #Second approch to solve: Add a transfer_money method used functions from above
+    def move_money(self, destination, money):
+        self.make_withdrawal(money)
+        destination.make_deposit(money)
+        print(self.account_balance)
+        print(destination.account_balance)
+        return self  
 
 #Create 3 instances of the User class
 sana = User("Sana","sansoon@gmail.com")
@@ -36,12 +51,8 @@ result2 = sam.display_user_balance()
 print(result2)
 
 
-#BONUS: Add a transfer_money method; have the first user transfer money to the third user and then print both users' balances
-def transfer_money(sana, sam, amount):
-    sana.account_balance = sana.account_balance - amount
-    sam.account_balance += amount
-    print(sana.account_balance)
-    print(sam.account_balance)
+#have the first user transfer money to the third user and then print both users' balances
+sana.transfer_money(sam, 200)
 
-output = transfer_money(sana, sam, 10)
-print(output)
+
+sana.move_money(sam, 20)

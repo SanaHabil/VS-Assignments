@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+
+    <style>
+        .container {
+            
+            margin-top: 100px;
+            text-align: center;
+            align-items: center;
+        }
+    .result {
+        background-color: red;
+        padding: 100px;
+    }
+    #bingo-result {
+        background-color: green;
+        padding: 100px;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <h1> Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <div>
+        
+    </div>
+    <form action="/show" method="post">
+        <table>
+            <input type="text" name='numb'></input><br>
+            <a href="/show"><button>Submit</button></a>
+        </table>
+    </form>
+</div> 
+</body>
+</html>

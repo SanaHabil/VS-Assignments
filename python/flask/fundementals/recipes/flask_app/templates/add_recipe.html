@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Recipes</title>
+</head>
+<body>
+    <div style="margin-top:20px; margin-left:30px; padding:20px;" class="col-lg-10 mx-auto text-left text-white bg-secondary">
+        <h4 class="text-white">Add New Recipe</h4>
+        <a href="/"><button style="display:block; margin-left:20px; margin-left:1200px; margin-bottom: 10px;" class="btn bg-success text-dark margin ">Home</button></a>    
+        <a href="/reset"><button style="display:block; margin-left:20px; margin-left:1200px;" class="btn bg-success text-dark margin ">Logout</button></a> 
+    </div>
+    <div class="col-3 bg-dark text-white"style=" margin:100px; margin-right:400px; margin-left:200px; padding: 20px;">
+        <form action="/recipes/new" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" class=""><br><br>
+            <label>Description:</label>
+            <input type="text" name="description" class=""><br><br>
+            <label>Instructions:</label>
+            <input type="text" name="instructions" class=""><br><br>
+            <label>Date Made On:</label>
+            <input type="date" name="made_at" class=""><br><br>
+            <p>Under 30 Minutes?</p>
+            <input type="radio" id="yes" name="under_30_min" value="yes" checked>
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no" name="under_30_min" value="no">
+            <label for="no">No</label><br>
+            <input type="hidden" name="user_id" value={{session.user_id}}>
+            <a href="/recipes/new" class="text-warning"><button type="btn" class="btn btn-primary">Add</button></a>
+        </form>
+        {% with messages = get_flashed_messages(category_filter=['create']) %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %} 
+    </div>
+</body>
+</html>

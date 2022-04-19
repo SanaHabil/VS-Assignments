@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Recipes</title>
+</head>
+<body>
+    <div style="margin:30px;" class=" d-flex ">
+        <h2 style="">Welcome {{current_user.first_name}}!</h2>
+        <a href="/"><button style="margin-left: 100px;" class="btn btn-primary">Home</button></a>    
+        <a href="/reset"><button style="margin-left:20px;" class="btn btn-primary">Logout</button></a>
+    </div>
+    <h4 style="margin:30px;" class="">{{ one_recipe.name }}</h4>
+    <div class="card border border-secondary" style="padding: 30px; width: 50rem; margin-left: 30px;">
+        <table>   
+            <tbody>
+                <tr>
+                    <th scope="row">Description:</th>
+                    <td>{{ one_recipe.description }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Under 30 Minutes:</th>
+                    <td>{{ one_recipe.under_30_min }} </td>
+                </tr>
+                <tr>
+                    <th scope="row">Instructions:</th>
+                    <td>{{ one_recipe.instructions }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date Made:</th>
+                    <td>{{ one_recipe.made_at }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

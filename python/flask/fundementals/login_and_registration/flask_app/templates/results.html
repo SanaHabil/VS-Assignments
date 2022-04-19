@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Wall</title>
+</head>
+<body>
+        <div class=" container text-warning d-flex p-3 border" >
+            <h5 class="text-warning" style="text-align:left;margin:0px; padding:0px;"> Coding Dojo Wall</h5>
+            <h5 style="text-align:right; margin-left:800px;">Welcome {{current_user.first_name}}!</h5>
+            <a style="text-align:right; margin-left:20px;" href="/reset"><button lass="btn bg-success text-dark ">Logout</button></a>    
+        </div>
+    <div class="container d-flex p-2">
+        <div style="margin-top:20px;"class="col-lg-3 mx-auto text-center text-white bg-secondary">
+            <h4 class="text-info card-header"> {{count}} Messages for you</h4>
+            {% for message in messages %}
+            <div class=" text-info card bg-info text-white" style="width: 18rem; margin-left: 20px;">
+                <p>{{ message.sender}} sends you a message {{ message.sending_time() }}:</p>
+                <p>{{message.content}}</p>
+                <a href="/delete_message/{{message.id}}"><button style="display:block; margin-left:20px; margin-bottom:20px;" class="btn bg-success text-dark margin ">Delete</button></a>
+            </div>
+                {% endfor %}
+        </div>
+        <div style="margin-top:20px;"class="col-lg-3 mx-auto text-center text-white bg-secondary">
+            <h4 class="text-white font-weight-bold"> Send a message:</h4>
+            {% for y in users %}
+                {% if y.id != session['user_id'] %}
+                <form action="/send_message" method="post" class="form-group">
+                    <input type="hidden" name="sender_id" value={{session.user_id}}>
+                    <input type="hidden" name="receiver_id" value={{y.id}}>
+                    <label for="receiver_id">Message {{y.first_name}}:</label>
+                    <textarea name="content" style="width:300px;" cols="30" rows="3"></textarea>
+                    <a href=""><button style="display:block; margin-left:20px; margin-bottom:20px;" class="btn bg-success text-dark margin ">Message</button></a>
+                </form>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>    
+</body>    
+    

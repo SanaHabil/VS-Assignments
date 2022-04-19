@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <div class="contaner" >
+        <div style="margin-top:20px; display: flex; justify-content:space-between; vertical-align: baseline; margin-left: 200px;"> 
+            <h1 style="color:rgb(168, 135, 166);" class="float-left">Edit USER</h1>
+            <a href="/users" style="color:rgb(168, 135, 166); margin-top: 30px; margin-left:450px;"  >HOME</a><br><br>
+        </div>
+        <form action="/edit/{{user.id}}" method="post" >
+            <div class="container border" style="margin-left: 200px; margin-right: 400px; margin-top: 20px; padding:50px; padding-left: 50px;background-color: rgb(218, 188, 192);" >
+                <table>
+                    <label>First Name:</label>
+                    <input type="text" name="first_name" class="form-control" value="{{ user.first_name}}"></input><br><br>
+                    <label>Last Name:</label>
+                    <input type="text" name="last_name" class="form-control" value="{{ user.last_name}}"></input><br><br>
+                    <label>Email:</label>
+                    <input type="text" name="email" class="form-control" value="{{ user.email}}"></input><br><br>
+                    <div class="d-flex ">
+                        <a href="/edit/{{user.id}}"><button class="btn" style="color:rgb(168, 135, 166);">Edit</button></a>  | <a href="/show_user" style="color:rgb(168, 135, 166);">Show User</a> 
+                    </div>
+                </table>
+            </div> 
+        </form><br><br>
+    </div>    
+</body>
+</html>

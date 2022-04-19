@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ninjas</title>
+</head>
+<body>
+    <div class="row justify-content-start">
+        <div class="col-2 bg-dark text-white"style=" margin:100px; margin-right:400px; margin-left:200px; padding: 20px;">
+            <h2 class="text-primary">New Ninja</h2><br>
+            <form action="/add_ninja" method="post">
+                <label> Dojo:</label>
+                <select name="dojo_id">
+                <!-- Need to create an option list for the user to select a dojo. -->
+                <!-- Note that we are passing the dojo id into the value -->
+                {% for dojo in all_dojos %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {% endfor %}
+                </select><br><br>
+                <label>First Name:</label>
+                <input type="text" name="first_name" class=""><br><br>
+                <label>Last Name:</label>
+                <input type="text" name="last_name" class=""><br><br>
+                <label>Age:</label><br>
+                <input type="text" name="age" class=""><br><br>
+                <a href="/add_ninja" class="text-warning"><button type="btn" class="btn btn-primary">Add Ninja</button></a>
+            </form>
+        </div>
+            <a href="/dojos" style="margin-left:200px;">Home</a> 
+        </div>
+
+    </div>
+</body>
+</html>

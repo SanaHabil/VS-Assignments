@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Recipes</title>
+</head>
+<body>
+    <div style="margin:30px;" class=" d-flex ">
+        <h2 style="">Edit Recipe</h2>
+        <a href="/"><button style="margin-left: 1000px;" class="btn btn-primary">Home</button></a>    
+        <a href="/reset"><button style="margin-left:20px;" class="btn btn-primary">Logout</button></a>
+    </div>
+    <div class="col-10 bg-secondary text-white"style=" margin-left:200px; padding: 20px;">
+        <form action="/recipes/edit/{{one_recipe.id}}" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" value="{{one_recipe.name}}"><br><br>
+            <label>Description:</label>
+            <input type="text" name="description" value="{{one_recipe.description}}"><br><br>
+            <label>Instructions:</label>
+            <input type="text" name="instructions" value="{{one_recipe.instructions}}"><br><br>
+            <label>Date Made On:</label>
+            <input type="date" name="made_at" value="{{one_recipe.made_at.strftime('%Y-%m-%d')}}"><br><br>
+            <p>Under 30 Minutes?</p>
+
+            <input type="radio" id="yes" name="under_30_min" value="yes">Yes<br>
+            <input type="radio" id="no" name="under_30_min" value="no">No<br>
+            <input type="hidden" name="user_id" value={{session.user_id}}><br>
+            <input type="hidden" name="id" value={{one_recipe.id}}><br>
+            <a href="/results" class="text-warning"><button type="btn" class="btn btn-primary">Update</button></a>
+        </form>
+        {% with messages = get_flashed_messages(category_filter=['update']) %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}  
+    </div>
+</body>
+</html>
